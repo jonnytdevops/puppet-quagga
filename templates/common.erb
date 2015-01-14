@@ -1,0 +1,15 @@
+hostname <%= @hostname %>
+<%- if @vty_password -%>
+password <%= @vty_password %>
+service password-encryption
+line vty
+  login
+<%- else -%>
+line vty
+  no login
+<%- end -%>
+!
+<%- if @vty_enable_password -%>
+enable password <%= @vty_enable_password %>
+<%- end -%>
+log file /var/log/quagga/<%= @name %>.log

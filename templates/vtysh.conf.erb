@@ -1,0 +1,4 @@
+hostname <%= @hostname %>
+<%- if @vty_password -%>
+username root <%= @vty_password %>
+<%- end -%>

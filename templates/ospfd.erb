@@ -1,0 +1,17 @@
+<%- unless @interfaces.empty? -%>
+!
+<%-   @interfaces.each do |intf| -%>
+interface <%= intf['name'] %>
+  ip ospf network <%= intf['ospf_network'] || 'broadcast' %>
+<%-   end
+    end -%>
+!
+router ospf
+  ospf router-id <%= @router_id %>
+<%- @redistribute.each do |type, opt| -%>
+  redistribute <%= type %><%= opt['route_map'] && " route-map #{opt['route_map']}" %>
+<%- end -%>
+<%- @routes.each do |route| -%>
+  network <%= route['network'] %> area <%= @ospf_area %>
+<%- end -%>
+!

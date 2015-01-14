@@ -1,0 +1,9 @@
+<%-
+default = %w(permit deny).reject { |p| p === @action }.first
+-%>
+! access_list <%= @name %>
+<%- @networks.each do |net| -%>
+access-list <%= @name %> <%= perm %> <%= @net %>
+<%- end -%>
+access-list <%= @name %> <%= default %> any
+!

@@ -1,0 +1,28 @@
+---
+quagga::hostname: '%{::fqdn}'
+quagga::vty_password: false
+quagga::vty_enable_password: false
+quagga::router_id: '%{::ipaddress}'
+quagga::interfaces: []
+quagga::routes: []
+quagga::redistribute: []
+
+quagga::zebra: false
+
+quagga::bgpd: false
+
+quagga::ospfd: false
+quagga::ospf_area: '0.0.0.0'
+
+quagga::ospf6d: false
+
+quagga::ripd: false
+
+quagga::ripngd: false
+
+quagga::isisd: false
+
+quagga::babeld: false
+
+quagga::package_name: 'quagga'
+quagga::service_name: 'quagga'
