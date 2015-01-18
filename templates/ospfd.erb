@@ -1,8 +1,8 @@
 <%- unless @interfaces.empty? -%>
 !
-<%-   @interfaces.each do |intf| -%>
-interface <%= intf['name'] %>
-  ip ospf network <%= intf['ospf_network'] || 'broadcast' %>
+<%-   @interfaces.each do |name,opt| -%>
+interface <%= name %>
+  ip ospf network <%= opt['ospf_network'] || 'broadcast' %>
 <%-   end
     end -%>
 !

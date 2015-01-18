@@ -1,0 +1,3 @@
+---
+quagga::service_hasstatus: false
+quagga::service_status: '/usr/bin/test -f /var/run/quagga/watchquagga.pid'

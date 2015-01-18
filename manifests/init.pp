@@ -18,6 +18,8 @@ class quagga (
     $babeld              = undef,
     $package_name        = undef,
     $service_name        = undef,
+    $service_hasstatus   = undef,
+    $service_status      = undef,
 ) {
     File {
         ensure  => present,
@@ -76,7 +78,9 @@ class quagga (
     quagga::daemon { 'babeld': enable => $babeld, }
 
     service { 'quagga':
-        ensure => running,
-        name   => $service_name,
+        ensure    => running,
+        name      => $service_name,
+        hasstatus => $service_hasstatus,
+        status    => $service_status,
     }
 }

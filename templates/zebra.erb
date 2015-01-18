@@ -1,13 +1,13 @@
 log record-priority
 !
-<%- @interfaces.each do |intf| -%>
-interface <%= intf['name'] %>
-<%- if intf['description'] -%>
-  description <%= intf['description'] %>
+<%- @interfaces.each do |name,opt| -%>
+interface <%= name %>
+<%- if opt['description'] -%>
+  description <%= opt['description'] %>
 <%- end -%>
-<%- if intf['address'] -%>
-  ip address <%= intf['address'] %>
+<%- if opt['address'] -%>
+  ip address <%= opt['address'] %>
 <%- end -%>
-  <%= intf['link_detect'] || 'no ' %>link-detect
+  <%= opt['link_detect'] || 'no ' %>link-detect
 <%- end -%>
 !
