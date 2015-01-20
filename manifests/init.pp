@@ -7,6 +7,7 @@ class quagga (
     $interfaces          = undef,
     $networks            = undef,
     $redistribute        = undef,
+    $ospf_areas          = undef,
     $zebra               = undef,
     $bgpd                = undef,
     $ospfd               = undef,

@@ -4,8 +4,9 @@ quagga::vty_password: false
 quagga::vty_enable_password: false
 quagga::router_id: '%{::ipaddress}'
 quagga::interfaces: {}
-quagga::routes: []
+quagga::networks: {}
 quagga::redistribute: {}
+quagga::ospf_areas: {}
 
 quagga::zebra: false
 

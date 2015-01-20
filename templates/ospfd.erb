@@ -8,6 +8,9 @@ interface <%= name %>
 !
 router ospf
   ospf router-id <%= @router_id %>
+<%- @ospf_areas.each do |area, opt| -%>
+  area <%= area %><%= opt['range'] && " range #{opt['range']}" %>
+<%- end -%>
 <%- @redistribute.each do |type, opt| -%>
   redistribute <%= type %><%= opt['route_map'] && " route-map #{opt['route_map']}" %>
 <%- end -%>
