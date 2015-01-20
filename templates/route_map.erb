@@ -1,0 +1,11 @@
+! route-map <%= @name %>
+<%- @entries.each do |order,entry| -%>
+route-map <%= @name %> <%= entry['action'] %> <%= order %>
+<%-   if entry['match']
+        match = entry['match']
+        case match['type']
+        when 'acl' -%>
+  match ip address <%= match['name'] %>
+<%-     end
+      end
+    end -%>
