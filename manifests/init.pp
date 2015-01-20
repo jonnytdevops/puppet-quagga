@@ -5,7 +5,7 @@ class quagga (
     $vty_enable_password = undef,
     $router_id           = undef,
     $interfaces          = undef,
-    $routes              = undef,
+    $networks            = undef,
     $redistribute        = undef,
     $zebra               = undef,
     $bgpd                = undef,

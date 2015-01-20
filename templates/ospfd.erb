@@ -11,7 +11,7 @@ router ospf
 <%- @redistribute.each do |type, opt| -%>
   redistribute <%= type %><%= opt['route_map'] && " route-map #{opt['route_map']}" %>
 <%- end -%>
-<%- @routes.each do |route| -%>
-  network <%= route['network'] %> area <%= @ospf_area %>
+<%- @networks.each do |net| -%>
+  network <%= net['address'] %> area <%= net['area'] || @ospf_area %>
 <%- end -%>
 !
