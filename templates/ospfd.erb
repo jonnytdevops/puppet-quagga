@@ -8,6 +8,7 @@ interface <%= name %>
 !
 router ospf
   ospf router-id <%= @router_id %>
+  auto-cost reference-bandwidth <%= @ospf_ref_bw %>
 <%- @ospf_areas.each do |area, opt| -%>
   area <%= area %><%= opt['range'] && " range #{opt['range']}" %>
 <%- end -%>

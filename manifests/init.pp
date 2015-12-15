@@ -13,6 +13,7 @@ class quagga (
     $ospfd               = undef,
     $ospf_area           = undef,
     $ospf6d              = undef,
+    $ospf_ref_bw         = undef,
     $ripd                = undef,
     $ripngd              = undef,
     $isisd               = undef,
