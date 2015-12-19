@@ -14,6 +14,7 @@ quagga::bgpd: false
 
 quagga::ospfd: false
 quagga::ospf_area: '0.0.0.0'
+quagga::ospf_ref_bw: '100'
 
 quagga::ospf6d: false
 
