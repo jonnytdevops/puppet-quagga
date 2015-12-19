@@ -1,6 +1,6 @@
 {
   "name": "inkblot/quagga",
-  "version": "0.5.0",
+  "version": "0.5.1",
   "author": "inkblot",
   "license": "Apache-2.0",
   "summary": "A Puppet module to deploy and manage the Quagga route server",
