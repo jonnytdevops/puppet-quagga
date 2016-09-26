@@ -3,6 +3,9 @@
 <%-   @interfaces.each do |name,opt| -%>
 interface <%= name %>
   ip ospf network <%= opt['ospf_network'] || 'broadcast' %>
+  <%- if opt['area'] -%>
+  ip ospf area <%= opt['area'] %>
+  <%- end -%>
 <%-   end
     end -%>
 !
@@ -17,5 +20,10 @@ router ospf
 <%- end -%>
 <%- @networks.each do |net| -%>
   network <%= net['address'] %> area <%= net['area'] || @ospf_area %>
+<%- end -%>
+<%- @interfaces.each do |int, opt| -%>
+  <%- if opt['passive'] -%>
+  passive-interface <%= int %>
+  <%- end -%>
 <%- end -%>
 !
