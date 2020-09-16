@@ -1,0 +1,4 @@
+---
+quagga::service_hasstatus: false
+quagga::service_status: 'systemctl status ospfd'
+quagga::service_name: 'ospfd'

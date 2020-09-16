@@ -22,6 +22,7 @@ class quagga (
     $service_name        = undef,
     $service_hasstatus   = undef,
     $service_status      = undef,
+    $service_enable      = undef,
 ) {
     File {
         ensure  => present,
@@ -84,5 +85,6 @@ class quagga (
         name      => $service_name,
         hasstatus => $service_hasstatus,
         status    => $service_status,
+        enable    => $service_enable,
     }
 }

@@ -37,5 +37,5 @@ define quagga::daemon (
             order   => '00',
             content => template('quagga/common.erb'),
         }
-    } 
+    }
 }
